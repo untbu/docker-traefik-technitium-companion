@@ -23,7 +23,8 @@ def extract_domains(container):
             if 'Host' in value:
                 extracted_domains = re.findall(r"[\`\'\"]([a-zA-Z0-9\.\-]+)[\`\'\"]", value)
                 for v in extracted_domains:
-                    domains.append(v)
+                    if v.endswith(ZONE):
+                        domains.append(v)
             else:
                 pass
     return domains
