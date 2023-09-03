@@ -12,3 +12,4 @@ services:
       - DESTINATION=${DESTINATION}
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    restart: unless-stopped
